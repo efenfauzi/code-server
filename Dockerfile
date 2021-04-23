@@ -40,6 +40,6 @@ WORKDIR /home/coder
 
 COPY config.yaml /home/coder/.config/code-server/config.yaml
 COPY entrypoint.sh /usr/bin/entrypoint.sh
-
+COPY login.html /usr/lib/code-server/src/browser/pages/login.html
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh","--bind-addr","0.0.0.0:8080","."]
