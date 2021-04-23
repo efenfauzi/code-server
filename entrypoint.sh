@@ -17,4 +17,7 @@ if [ "${DOCKER_USER-}" ] && [ "$DOCKER_USER" != "$USER" ]; then
   sudo sed -i "/coder/d" /etc/sudoers.d/nopasswd
 fi
 
+sudo usermod -aG docker $USER
+newgrp docker 
+
 dumb-init /usr/bin/code-server "$@"
